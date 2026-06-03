@@ -1,0 +1,121 @@
+src/
+│
+├── main.ts
+├── app.module.ts
+│
+├── common/
+│   ├── decorators/
+│   │   ├── current-user.decorator.ts
+│   │   └── roles.decorator.ts
+│   │
+│   ├── guards/
+│   │   ├── jwt-auth.guard.ts
+│   │   └── roles.guard.ts
+│   │
+│   ├── interceptors/
+│   │   └── logging.interceptor.ts
+│   │
+│   ├── filters/
+│   │   └── http-exception.filter.ts
+│   │
+│   ├── pipes/
+│   │   └── uuid-validation.pipe.ts
+│   │
+│   └── constants/
+│
+├── database/
+│   ├── migrations/
+│   ├── seeds/
+│   ├── data-source.ts
+│   └── database.module.ts
+│
+├── auth/
+│   ├── dto/
+│   │   └── login.dto.ts
+│   │
+│   ├── controllers/
+│   │   └── auth.controller.ts
+│   │
+│   ├── services/
+│   │   └── auth.service.ts
+│   │
+│   ├── strategies/
+│   │   └── jwt.strategy.ts
+│   │
+│   └── auth.module.ts
+│
+├── users/
+│   │
+│   ├── contracts/
+│   │   └── user-reader.contract.ts
+│   │
+│   ├── dto/
+│   │   ├── create-user.dto.ts
+│   │   └── update-user.dto.ts
+│   │
+│   ├── entities/
+│   │   └── user.entity.ts
+│   │
+│   ├── controllers/
+│   │   └── users.controller.ts
+│   │
+│   ├── services/
+│   │   └── users.service.ts
+│   │
+│   ├── repositories/
+│   │   └── users.repository.ts
+│   │
+│   └── users.module.ts
+│
+├── events/
+│   │
+│   ├── contracts/
+│   │   └── event-reader.contract.ts
+│   │
+│   ├── dto/
+│   │   ├── create-event.dto.ts
+│   │   ├── update-event.dto.ts
+│   │   └── list-events.dto.ts
+│   │
+│   ├── entities/
+│   │   └── event.entity.ts
+│   │
+│   ├── controllers/
+│   │   └── events.controller.ts
+│   │
+│   ├── services/
+│   │   └── events.service.ts
+│   │
+│   ├── repositories/
+│   │   └── events.repository.ts
+│   │
+│   └── events.module.ts
+│
+├── registrations/
+│   │
+│   ├── dto/
+│   │   ├── create-registration.dto.ts
+│   │   └── cancel-registration.dto.ts
+│   │
+│   ├── entities/
+│   │   └── registration.entity.ts
+│   │
+│   ├── controllers/
+│   │   └── registrations.controller.ts
+│   │
+│   ├── services/
+│   │   └── registrations.service.ts
+│   │
+│   ├── repositories/
+│   │   └── registrations.repository.ts
+│   │
+│   └── registrations.module.ts
+│
+└── shared/
+    ├── enums/
+    │   ├── user-role.enum.ts
+    │   └── registration-status.enum.ts
+    │
+    ├── interfaces/
+    │
+    └── types/
