@@ -21,10 +21,10 @@ import { DatabaseModule } from 'src/database/database.module';
       }),
     }),
     DatabaseModule,
+    UserModule,
     AuthModule,
     EventModule,
     RegistrationModule,
-    UserModule,
   ],
 })
 export class AppModule {}

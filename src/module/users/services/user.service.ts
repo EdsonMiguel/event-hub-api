@@ -37,4 +37,28 @@ export class UserService {
     const savedUser = await this.userRepository.save(userToCreate);
     return savedUser;
   }
+
+  async findByUsername(username: string) {
+    return await this.userRepository.findOne({
+      where: {
+        username,
+      },
+    });
+  }
+
+  async findByEmail(email: string) {
+    return await this.userRepository.findOne({
+      where: {
+        email,
+      },
+    });
+  }
+
+  async findByUsernameWithPassword(username: string) {
+    return await this.userRepository
+      .createQueryBuilder('user')
+      .where('user.username = :username', { username })
+      .addSelect('user.password')
+      .getOne();
+  }
 }
