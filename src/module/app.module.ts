@@ -5,6 +5,7 @@ import { EventModule } from './events/event.module';
 import { AuthModule } from './auth/auth.module';
 import { ConfigModule } from '@nestjs/config';
 import Joi from '@hapi/joi';
+import { DatabaseModule } from 'src/database/database.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import Joi from '@hapi/joi';
         DB_SYNC: Joi.number().min(0).max(1).default(0),
       }),
     }),
+    DatabaseModule,
     AuthModule,
     EventModule,
     RegistrationModule,
