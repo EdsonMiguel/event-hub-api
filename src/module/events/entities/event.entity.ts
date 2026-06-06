@@ -6,8 +6,10 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
   JoinColumn,
+  OneToMany,
 } from 'typeorm';
 import { User } from '../../users/entities/user.entity'; // Ajuste o caminho conforme seu projeto
+import { Registration } from 'src/module/registrations/entities/registration.entity';
 
 // Definimos as únicas opções aceitas para o tipo de evento
 export enum EventType {
@@ -58,6 +60,9 @@ export class Event {
   @ManyToOne(() => User)
   @JoinColumn({ name: 'organizer_id' }) // Nome da coluna que ficará no banco de dados
   organizer: User;
+
+  @OneToMany(() => Registration, (registration) => registration.event)
+  registrations: Registration[];
 
   @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;

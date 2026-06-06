@@ -62,6 +62,14 @@ export class UserService {
     });
   }
 
+  async findByIdOrElseThrow(id: string) {
+    return await this.userRepository.findOne({
+      where: {
+        id,
+      },
+    });
+  }
+
   async findByUsernameWithPassword(username: string) {
     return await this.userRepository
       .createQueryBuilder('user')

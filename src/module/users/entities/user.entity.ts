@@ -1,7 +1,9 @@
+import { Registration } from 'src/module/registrations/entities/registration.entity';
 import {
   Column,
   CreateDateColumn,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -22,6 +24,9 @@ export class User {
 
   @Column({ select: false })
   password: string;
+
+  @OneToMany(() => Registration, (registration) => registration.user)
+  registrations: Registration[];
 
   @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;

@@ -31,4 +31,10 @@ export class EventService {
 
     const eventSave = await this.eventRepository.save(eventToCreate);
   }
+
+  async findByIdIfAvailable(eventId: string) {
+    return this.eventRepository.findOneBy({ id: eventId });
+  }
+  async findById(eventId: string) {}
+  async findBySlug() {}
 }
